@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json/"
+      - "package-lack.json"
+      - "tsconfig.json"
+      - ".github/workflow/push-pr"
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5.0.0
+    - name: Run tests
+      run: npm test  
