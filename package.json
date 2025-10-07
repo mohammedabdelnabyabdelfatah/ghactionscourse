@@ -6,6 +6,7 @@
     "script": {
         "test": "bash src/test.sh"
     },
-    "dependemcies": {},
-
+    "dependencies": {}
 }
+
+
